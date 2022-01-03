@@ -32,17 +32,18 @@ if __name__ == '__main__':
     check_directories()
     if len(os.listdir("resources/cif")) > 0:
         if args.pdb_file:
-            decision = int(input('''resources/cif is not empty. Would you like to skip downloading new cif files?
+            decision = input('''resources/cif is not empty. Would you like to skip downloading new cif files?
             1 or enter: continue without downloading
             2: download cif files
             3: clear cif folder then download cif files
-            > '''))
-            if decision == 2:
-                download_files(args)
-            elif decision == 3:
-                for f in os.path.listdir("resources/cif"):
-                    os.remove(os.path.join("resources/cif", f))
-                download_files(args)
+            > ''')
+            if decision.isdigit():
+                if decision == 2:
+                    download_files(args)
+                elif decision == 3:
+                    for f in os.path.listdir("resources/cif"):
+                        os.remove(os.path.join("resources/cif", f))
+                    download_files(args)
     else:
         download_files(args)
 
