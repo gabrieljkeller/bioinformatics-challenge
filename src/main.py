@@ -1,8 +1,9 @@
 import argparse
-import cif_downloader
-import gemmi_parser
 import os
 import sys
+import cif_downloader
+import gemmi_parser
+import aa_plotter
 
 def download_files(args):
     if not args.pdb_file:
@@ -46,11 +47,14 @@ if __name__ == '__main__':
         download_files(args)
 
     # Parse cif fies using Gemmi
+    print("Counting amino acids...")
     totals = gemmi_parser.parse()
     f = 100.0 / sum(totals.values())
+    print("Done")
     print('TOTAL', *(f"{m}: {c} (%.2f%%)" % (c*f) for (m, c) in totals.most_common()))
 
     # Plot amino acids
-
+    print("Plotting amino acid counts...")
+    aa_plotter.plot_amino_acids(totals)
 
 
