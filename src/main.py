@@ -38,6 +38,7 @@ if __name__ == '__main__':
             3: clear cif folder then download cif files
             > ''')
             if decision.isdigit():
+                decision = int(decision)
                 if decision == 2:
                     download_files(args)
                 elif decision == 3:
