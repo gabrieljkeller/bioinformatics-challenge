@@ -1,11 +1,7 @@
 import requests
-import os
 
 
 def download_from_file(file_name):
-    if not os.path.isdir("resources/cif"):
-        os.mkdir("resources/cif")
-
     with open(file_name, "r") as file:
         total_lines = sum(1 for line in file)
         i = 0

@@ -2,9 +2,13 @@
 A Python script that displays statistics about the amino acids processed from a file of PDB IDs
 
 ## Usage
-`python3 src/main.py ./resources/file.txt`
+`python3 src/main.py --pdb_file ./resources/file.txt`
 
 where `./resources/file.txt` is the relative path to the file to parse
+
+`python3 src/main.py`
+
+where cif files are already loaded in `resources/cif`
 
 ## Dependencies
 - requests (2.26.0)
