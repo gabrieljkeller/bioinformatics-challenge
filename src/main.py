@@ -1,5 +1,6 @@
 import argparse
 import cif_downloader
+import gemmi_parser
 
 if __name__ == '__main__':
     # Parse CLI args
@@ -10,6 +11,8 @@ if __name__ == '__main__':
     # Download cif files
     print(f"Downloading mmCIF files from PDB IDs located in {args.pdb_file}")
     cif_downloader.download_from_file(args.pdb_file)
+    print("Done")
+
 
 
 
