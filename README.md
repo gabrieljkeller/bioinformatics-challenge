@@ -10,6 +10,7 @@ where `./resources/file.txt` is the relative path to the file to parse
 - requests (2.26.0)
 - matplotlib (3.5.1)
 - gemmi (0.5.1)
+- argparse (1.4.0)
 
 ## License
 Work in the `src` directory is licensed under the MIT License, found in the LICENSE.txt file

@@ -1,6 +1,15 @@
-import os
+import argparse
+import cif_downloader
 
 if __name__ == '__main__':
-   args = os.argv[1:]
+    # Parse CLI args
+    parser = argparse.ArgumentParser()
+    parser.add_argument("pdb_file", type=str, help="relative path to text file with pdb ids")
+    args = parser.parse_args()
+
+    # Download cif files
+    print(f"Downloading mmCIF files from PDB IDs located in {args.pdb_file}")
+    cif_downloader.download_from_file(args.pdb_file)
+
 
 
