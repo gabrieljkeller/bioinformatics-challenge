@@ -21,4 +21,4 @@ def parse():
         totals += aa_counter
         ###
 
-        return totals
+    return totals

@@ -46,7 +46,11 @@ if __name__ == '__main__':
         download_files(args)
 
     # Parse cif fies using Gemmi
-    gemmi_parser.parse()
+    totals = gemmi_parser.parse()
+    f = 100.0 / sum(totals.values())
+    print('TOTAL', *(f"{m}: {c} (%.2f%%)" % (c*f) for (m, c) in totals.most_common()))
+
+    # Plot amino acids
 
 
 
